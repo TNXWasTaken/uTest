@@ -1,5 +1,7 @@
 /// urun.js
-document.addEventListener("keydown", function (e) {
+
+try {
+  document.addEventListener("keydown", function (e) {
   if (e.key == "~" && e.ctrlKey) {
     try {
       chrome.permissions.request({
@@ -19,3 +21,6 @@ document.addEventListener("keydown", function (e) {
     }
   }
 });
+} catch(error) {
+  alert(error)
+}
